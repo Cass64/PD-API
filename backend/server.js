@@ -2,14 +2,14 @@ require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
-const { Client } = require('pg'); // Ou 'mysql' si vous utilisez MySQL
+const { Client } = require('mysql'); // Ou 'mysql' si vous utilisez MySQL
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-    origin: ['http://127.0.0.1:5500', 'https://your-project-delta-website.com'], // Remplacez par l'URL de votre site web
+    origin: ['http://127.0.0.1:5500', 'https://project-delta.fr'], // Remplacez par l'URL de votre site web
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
